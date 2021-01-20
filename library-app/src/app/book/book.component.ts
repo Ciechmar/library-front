@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Book} from "../model/book";
-import {BookService} from "../book.service";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Book} from '../model/book';
+import {BookService} from './book.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-book',
@@ -13,26 +13,37 @@ export class BookComponent implements OnInit {
   findForm: FormGroup;
 
   constructor(private bookService: BookService) {
-    this.getBooksByAuthor(),
-      this.getBooksByTitle()
+    // this.getBooksByAuthor(),
+    //   this.getBooksByTitle();
   }
 
   ngOnInit(): void {
+    // this.getBooksByAuthor();
+    this.getBooksByTitle();
     this.findForm = new FormGroup({
-      'title': new FormControl('', Validators.required),
-      'author': new FormControl('', Validators.required)
-    })
+      title: new FormControl('', Validators.required),
+      author: new FormControl('', Validators.required)
+    });
 
   }
 
+  //
+  // getBooksByAuthor(): void {
+  //   const inputValue = this.findForm.get('author').value;
+  //   this.bookService.getBooksByAuthor(inputValue).subscribe(book => this.books = book);
+  // }
+  //
+  // getBooksByTitle(): void {
+  //   const inputValue = this.findForm.get('title').value;
+  //   this.bookService.getBooksByTitle(inputValue).subscribe(book => this.books = book);
+  // }
+
   getBooksByAuthor(): void {
-    const inputValue = this.findForm.get('author').value;
-    this.bookService.getBooksByAuthor(inputValue).subscribe(book => this.books = book);
+    this.bookService.getBooksByAuthor('mroz').subscribe(books => this.books = books);
   }
 
   getBooksByTitle(): void {
-    const inputValue = this.findForm.get('title').value;
-    this.bookService.getBooksByTitle(inputValue).subscribe(book => this.books = book);
+    this.bookService.getBooksByTitle('hobbit').subscribe(books => this.books = books);
   }
 
 }

@@ -1,5 +1,120 @@
 <main class="container">
+  <!--<nav class="navigation">-->
+  <!--  <div class="container">-->
+  <!--    <ul>-->
+
+  <!--      <li><a href="#find">Wyszukaj książkę</a></li>-->
+  <!--      <li><a href="#login">Zaloguj się</a></li>-->
+  <!--      <li><a href="#contact">Kontakt</a></li>-->
+  <!--    </ul>-->
+  <!--  </div>-->
+  <!--</nav>-->
+
+
+  <hr>
+  <section class="splash">
+    <div class="page-intro">
+      <br>
+      <h1 class="main-title"><b>Library Management App</b></h1>
+      <h4 class="main-title">... biblioteka.. po prostu :)</h4>
+      <!--    <a class="btn btn-solid" href="http://localhost:8080/books?author=tolkien">Lista książek- Tolkien ;)</a>-->
+      <br>
+      <!--    <a class="btn btn-solid" href=""></a>-->
+      <a class="btn btn-solid" href="#book_list">Lista książek</a>
+      <a class="btn btn-solid" href="#quotes">cytaty</a>
+      <a class="btn btn-solid" href="#contact">kontakt</a>
+
+    </div>
+  </section>
+  <hr>
+  <app-book id ="book_list"></app-book>
+  <hr>
   <app-log></app-log>
   <router-outlet></router-outlet>
 <!--  <app-book></app-book>-->
+
+  <section class="statement" id="statement">
+    <div class="container">
+      <p> "Nawet płonący żywy trup ma swoje jasne strony" <br> Goblin :) </p>
+    </div>
+
+  </section>
+  <section class="quotes" id="quotes">
+    <div class="container">
+      <h2 class="section-title">Troszkę cytatów od Terry'ego Pratchett'a:</h2>
+    </div>
+    <div class="quotes-wrapper">
+      <article class="quote">
+
+        <blockquote>
+          <q>
+            Ludzie, którzy nie potrzebują innych ludzi, potrzebują innych ludzi, by im okazywać, że są ludźmi, którzy nie
+            potrzebują innych ludzi.
+          </q>
+          <footer>Terry Pratchett - Maskarada</footer>
+        </blockquote>
+      </article>
+
+
+      <article class="quote">
+        <blockquote>
+          <q>
+
+            Kiedy łamiesz zasady, łam je mocno i na dobre.
+          </q>
+          <footer> Terry Pratchett - Trzy wiedźmy</footer>
+        </blockquote>
+      </article>
+
+
+      <article class="quote">
+        <blockquote>
+          <q>Jest śmierć i podatki, ale podatki są gorsze, bo śmierć przynajmniej nie trafia się człowiekowi co roku.
+          </q>
+          <footer> Terry Pratchett - Kosiarz</footer>
+        </blockquote>
+      </article>
+
+
+      <article class="quote">
+        <blockquote>
+          <q>
+
+            – Chciałem powiedzieć (...) że na tym świecie jest chyba coś, dla czego warto żyć. <br>Śmierć zastanowił się
+            przez chwilę. <br> -KOTY- stwierdził w końcu -KOTY SĄ MIŁE.
+
+          </q>
+          <footer> Terry Pratchett - Czarodzicielstwo</footer>
+        </blockquote>
+      </article>
+    </div>
+  </section>
+  <hr>
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">KONTAKT</h2>
+      <ul class="social-links">
+        <li>Marta Kowalczyk:</li>
+        <li><a href="https://www.linkedin.com/in/marta-ciechmar-kowalczyk/" target="_blank"> LinkedIn</a></li>
+        <li><a href="#ciechmar@o2.pl"> Email</a></li>
+        <li><a href="https://github.com/Ciechmar" target="_blank"> GitHub</a></li>
+      </ul>
+      <ul class="social-links">
+        <li>Weronika Bladowska:</li>
+        <li><a href="https://www.linkedin.com/" target="_blank"> LinkedIn</a></li>
+        <li><a href="#email@email.pl"> Email</a></li>
+        <li><a href="https://github.com/" target="_blank"> GitHub</a></li>
+      </ul>
+    </div>
+    <hr>
+
+  </section>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Made with ♥ by Marta Kowalczyk & Weronika Bladowska</p>
+    </div>
+
+  </footer>
+
+
 </main>

@@ -18,7 +18,7 @@ export class UserService {
       'Content-Type': 'application/json',
       // 'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
-      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Methods': 'GET, POST, DELETE, UPDATE, PUT',
       'Access-Control-Allow-Origin': '*'
     })
   };
@@ -38,7 +38,7 @@ export class UserService {
   }
 
   getUser(id: number): Observable<LibraryUser> {
-    const url = `http://localhost:8080/users/${id}`;
+    const url = `${this.userUrl}/${id}`;
     return this.http.get<LibraryUser>(url);
   }
 

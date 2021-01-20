@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {LibraryUser} from "../model/libraryUser";
-import {UserService} from "../user.service";
+import {LibraryUser} from '../model/libraryUser';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-user',
@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
   constructor(private userService: UserService) {
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.getUsers();
   }
 
@@ -22,23 +22,28 @@ export class UserComponent implements OnInit {
     this.userService.getUsers().subscribe(users => this.users = users);
   }
 
-  add(firstName: string, lastName: string, year: number, email: string, password : string, tel: number): void {
+  add(firstName: string, lastName: string, year: number, email: string, password: string, tel: number): void {
     firstName = firstName.trim();
     email = email.trim();
-    if (!firstName || !lastName|| !email || password) {
-      return
+    if (!firstName || !lastName || !email || password) {
+      return;
     }
     if (email.indexOf('@') <= 1) {
       return;
     }
     this.userService.addUser({firstName, lastName, year, password, tel, email} as LibraryUser)
-      .subscribe( user => {this.users.push(user);
+      .subscribe(user => {
+        this.users.push(user);
       });
   }
 
   delete(user: LibraryUser): void {
     this.users = this.users.filter(us => us !== user);
     this.userService.deleteUser(user).subscribe();
+  }
+  update(user: LibraryUser): void {
+    this.users = this.users.filter(us => us !== user);
+    this.userService.updateUser(user).subscribe();
   }
 
 }

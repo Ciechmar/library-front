@@ -52,38 +52,7 @@ body {
 
 a, a:hover {
   text-decoration: none;
-  color: $color-splash;
-}
-
-.navigation {
-  background-color: $color-splash;
-  padding: 2px 0;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  z-index: 9999;
-  transition: $transition;
-}
-
-.navigation ul {
-  margin: 0;
-  padding: 0;
-}
-
-.navigation ul li {
-  display: inline-block;
-  margin-right: 30px;
-}
-
-.navigation ul li a {
-  font-family: $font-header;
-  font-size: 25px;
-  transition: $transition;
-
-}
-
-.navigation ul li a:hover {
-  background: rgba(0, 0, 0, 0.1);
+  color: $color-text;
 }
 
 section {
@@ -146,35 +115,39 @@ table td {
   text-align: left;
 }
 
+input {
+  width: 50vw;
+  height: 1.7rem;
+}
+
 /* Cieniujemy co drugi (parzysty) wiersz tabeli */
 /* Używamy tbody, aby upewnić się, że nie cieniujemy nagłówka - to zachowuje kolejność cieniowania */
 table tbody > tr:nth-child(odd) {
-  background: #dddddd;
+  background: $color-splash;
 }
 
 /* Przyciski */
 .button {
   display: inline-block;
   margin: 2px 0;
-  padding: 12px 30px 14px;
+  padding: 6px 15px 7px;
   border: 0;
   border-radius: 6px;
-  color: #ffffff;
+  color: $color-text;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
+  background: $color-splash;
 }
 
-///* Przycisk po najechaniu kursorem  - szary do przycisku podstawowego np.: szukaj */
-//.button:hover {
-//  background: #888888;
-//}
-//
-///* Przycisk w stanie aktywnym */
-//.button:active,
-//.button:focus {
-//  background: #777777;
-//}
+.button:hover {
+  background: $color-top;
+}
+
+.button:active,
+.button:focus {
+  background: $color-splash;
+}
 
 /* Przycisk w kolorze zielonym */
 .button-green {

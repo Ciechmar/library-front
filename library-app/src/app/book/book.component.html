@@ -1,18 +1,22 @@
-<section>
+<section class="main-subtitle">
   <table>
     <thead>
-    <tr> Wyszukaj po:</tr>
+    <tr>
+    Wyszukaj po:</tr>
+    <tr>
+
     <td> Autorze:</td>
-    <td><input type="text" (click)="getBooksByAuthor()"/></td>
+    <td><input type="text" (click)="getBooksByAuthor()" class="input"/></td>
     <td>
-      <button (click)="getBooksByAuthor()"> Szukaj</button>
+      <button (click)="getBooksByAuthor()" class="button"> Szukaj</button>
     </td>
     <tr>
-    <td> Tytule:</td>
-    <td><input type="text" formControlName="author"/></td>
-    <td>
-      <button class="submit" (click)="getBooksByTitle()"> Szukaj</button>
-    </td>
+
+      <td> Tytule:</td>
+      <td><input type="text" (click)="getBooksByTitle()" class="input"/></td>
+      <td>
+        <button (click)="getBooksByTitle()" class="button"> Szukaj</button>
+      </td>
     </tr>
     </thead>
   </table>
@@ -21,7 +25,7 @@
 <section>
   <table>
     <thead>
-    <tr>
+    <tr class="main-subtitle">
       <th>#</th>
       <th>Autor</th>
       <th> Tytuł</th>
