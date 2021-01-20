@@ -1,0 +1,46 @@
+<section>
+  <table>
+    <thead>
+    <tr> Wyszukaj po:</tr>
+    <td> Autorze:</td>
+    <td><input type="text" (click)="getBooksByAuthor()"/></td>
+    <td>
+      <button (click)="getBooksByAuthor()"> Szukaj</button>
+    </td>
+    <tr>
+    <td> Tytule:</td>
+    <td><input type="text" formControlName="author"/></td>
+    <td>
+      <button class="submit" (click)="getBooksByTitle()"> Szukaj</button>
+    </td>
+    </tr>
+    </thead>
+  </table>
+</section>
+
+<section>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Autor</th>
+      <th> Tytuł</th>
+      <th> Wydawca</th>
+      <th> Rok publikacji</th>
+      <th>Miejsce publikacji</th>
+      <th>ISBN</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{book.id}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.publisher}}</td>
+      <td>{{book.publicationYear}}</td>
+      <td>{{book.placeOfPublication}}</td>
+      <td>{{book.isbn}}</td>
+    </tr>
+    </tbody>
+  </table>
+</section>

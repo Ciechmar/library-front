@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Charmonman:400,700|Roboto+Condensed:400,700&display=swap&subset=latin-ext');
+
+$font-header: 'Amatic SC', cursive;
+$font-text: 'Roboto Condensed', sans-serif;
+$font-other: 'Charmonman', cursive;
+
+$color-background: #CCBA9D;
+$color-splash: #C8A36E;
+$color-main: #38887c; /*guziki*/
+$color-main-hover: #285d52;
+$color-main-focus: #11453b;
+$color-del: #e03333;
+$color-del-hover: #c31f1f;
+$color-del-focus: #830a0a;
+$color-back: #D8DCE1;
+$color-top: #AD7837;
+$color-text: #432A22;
+$transition: all 0.5s;
+
+//#CCBA9D
+//#C8A36E
+//#D8DCE1
+//#432A22
+//#AD7837
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  box-shadow: none;
+}
+
+body {
+  color: $color-text;
+  font-size: 14px;
+  line-height: 1.7;
+  height: 100%;
+  font-family: $font-text;
+  align-content: center;
+
+}
+
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: $color-splash;
+}
+
+.navigation {
+  background-color: $color-splash;
+  padding: 2px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  transition: $transition;
+}
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.navigation ul li a {
+  font-family: $font-header;
+  font-size: 25px;
+  transition: $transition;
+
+}
+
+.navigation ul li a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+section {
+  padding: 20px 0;
+}
+
+.splash {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  background-image: url('https://i.postimg.cc/j59CntG7/blur-book-stack-books-bookshelves-590493-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 60%;
+}
+
+.page-intro {
+  margin: auto;
+  text-align: center;
+}
+
+.main-title {
+  margin: 0;
+  color: $color-splash;
+  font-size: 48px;
+  letter-spacing: 3px;
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  padding: 0 24px;
+  font-family: $font-header;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+.main-subtitle {
+  margin: 24px 0 60px 0;
+  color: $color-text;
+  font-size: 20px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tabele */
+table {
+  width: 100%;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Cieniujemy co drugi (parzysty) wiersz tabeli */
+/* Używamy tbody, aby upewnić się, że nie cieniujemy nagłówka - to zachowuje kolejność cieniowania */
+table tbody > tr:nth-child(odd) {
+  background: #dddddd;
+}
+
+/* Przyciski */
+.button {
+  display: inline-block;
+  margin: 2px 0;
+  padding: 12px 30px 14px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+///* Przycisk po najechaniu kursorem  - szary do przycisku podstawowego np.: szukaj */
+//.button:hover {
+//  background: #888888;
+//}
+//
+///* Przycisk w stanie aktywnym */
+//.button:active,
+//.button:focus {
+//  background: #777777;
+//}
+
+/* Przycisk w kolorze zielonym */
+.button-green {
+  background: $color-main;
+}
+
+.button-green:hover {
+  background: $color-main-hover;
+}
+
+.button-green:active,
+.button-green:focus {
+  background: $color-main-focus;
+}
+
+/* Przycisk w kolorze czerwonym */
+.button-red {
+  background: $color-del;
+}
+
+.button-red:hover {
+  background: $color-del-hover;
+}
+
+.button-red:active,
+.button-red:focus {
+  background: $color-del-focus;
+}
+
+.statement {
+
+  background-image: url('https://i.postimg.cc/13PvDp5Z/books-768125.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin: auto;
+  background-attachment: fixed;
+
+}
+
+.statement p {
+  margin: 0;
+  font-family: $font-header;
+  text-align: center;
+  color: $color-text;
+  font-size: 24px;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.2);
+}
+
+.quotes {
+  background-color: lighten($color-splash, 10%);
+  padding: 30px 0 60px 0;
+}
+
+.quotes-wrapper {
+  margin: auto;
+
+}
+
+.quotes blockquote {
+  padding: 0 30px;
+  font-size: 16px;
+}
+
+.quotes footer {
+  margin: 10px 0 30px 0;
+  font-weight: bold;
+  text-align: right;
+
+}
+
+.quote {
+  width: 100%;
+  padding: 0 30px;
+
+}
+
+.contact {
+  text-align: center;
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  border: 10px solid white;
+}
+
+
+.page-footer {
+  padding: 12px 0;
+  background-color: $color-splash;
+  text-align: right;
+
+}
+
+.page-footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-footer p {
+  margin: 0;
+}
+
+
+/* Media Query dla urządzeń o minimalnej szerokości 992px & 767px */
+/* czyli dla komputerów stacjonarnych, tablety */
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  .features-wrapper {
+    display: block;
+  }
+
+  .feature {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .navigation {
+    position: static;
+  }
+
+  .btn {
+    padding: 2px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .container {
+    max-width: 737px;
+  }
+  .features-wrapper {
+    display: block;
+  }
+
+  .feature {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 13px;
+  }
+
+  .navigation {
+    position: static;
+  }
+
+  .btn {
+    padding: 1px;
+    font-size: 12px;
+  }
+
+}
