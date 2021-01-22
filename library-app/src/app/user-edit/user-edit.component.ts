@@ -11,13 +11,16 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class UserEditComponent implements OnInit {
   user: LibraryUser;
-
   signUpForm: FormGroup;
+  findForm: FormGroup;
 
   constructor(private route: ActivatedRoute, private userService: UserService, private location: Location) {
   }
 
   ngOnInit(): void {
+
+    this.findForm = new FormGroup(
+      {'id': new FormControl('', Validators.required)});
     this.signUpForm = new FormGroup(
       {
         'firstName': new FormControl('', Validators.required),
@@ -36,8 +39,7 @@ export class UserEditComponent implements OnInit {
   }
 
 
-  getUser(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+  getUser(id: number): void {
     this.userService.getUser(id).subscribe(user => this.user = user);
   }
 

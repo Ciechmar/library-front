@@ -33,13 +33,52 @@
             signUpForm.get('firstName').value,
             signUpForm.get('lastName').value,
             signUpForm.get('year').value,
+            signUpForm.get('password').value,
             signUpForm.get('email').value,
-            signUpForm.get('password').value ,
             signUpForm.get('tel').value
             )"
             class="button-green">Zapisz
     </button>
 
   </form>
-
-
+</section>
+<hr>
+<section>
+  <form class="form" [formGroup]="findForm">
+    <label> Znajdź użytkownika po ID:
+      <input type="number" placeholder="1" formControlName="id"/>
+    </label>
+    <span *ngIf="!findForm.get('id').valid && findForm.get('id').touched">Please enter valid
+            id</span>
+    <button type="submit"
+            (click)="getUser(
+            findForm.get('id').value
+            )"
+            class="button-green">Szukaj
+    </button>
+  </form>
+  <div *ngIf="user">
+  <table>
+    <thead>
+    <tr class="main-subtitle">
+      <th>#</th>
+      <th>Imię i nazwisko</th>
+      <th> Rok urodzenia</th>
+      <th> Numer telefonu</th>
+      <th>Adres e-mail</th>
+      <th>Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{user.id}}</td>
+            <td>{{user.firstName}} {{user.lastName}}</td>
+            <td>{{user.year}}</td>
+            <td>{{user.tel}}</td>
+            <td><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  <hr/>
+</section>
