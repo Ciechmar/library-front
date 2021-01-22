@@ -284,6 +284,24 @@ table tbody > tr:nth-child(odd) {
   margin: 0;
 }
 
+input {
+  border: $color-top solid 2px;
+  color: $color-text;
+  float: right;
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 420px;
+  padding: 40px;
+
+  input {
+    margin-bottom: 10px;
+  }
+}
 
 /* Media Query dla urządzeń o minimalnej szerokości 992px & 767px */
 /* czyli dla komputerów stacjonarnych, tablety */

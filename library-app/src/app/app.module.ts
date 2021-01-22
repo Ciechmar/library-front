@@ -6,9 +6,9 @@ import {AppComponent} from './app.component';
 import {UserComponent} from './user/user.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserEditComponent} from './user-edit/user-edit.component';
-import {FormsModule} from "@angular/forms";
 import {BookComponent} from './book/book.component';
 import {LogComponent} from './log/log.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,8 +21,8 @@ import {LogComponent} from './log/log.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
