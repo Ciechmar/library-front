@@ -1,15 +1,16 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
-import {AppRoutingModule} from './app-routing.module';
+import {AppRoutingModule, routing} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {UserComponent} from './user/user.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {UserEditComponent} from './user-edit/user-edit.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BookComponent} from './book/book.component';
-import {LogComponent} from './login/log/log.component';
-import {HomeComponent} from './login/home/home.component';
+import {LogComponent} from './login/log';
+import {HomeComponent} from './login/home';
+import {ErrorInterceptor} from './login/helpers/error.interceptor';
+import {BasicAuthInterceptor} from './login/helpers/basic-auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,16 @@ import {HomeComponent} from './login/home/home.component';
     HomeComponent],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    routing,
     HttpClientModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

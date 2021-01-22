@@ -9,16 +9,16 @@ import {AuthenticationService} from './services/authentication.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  currentUser: LibraryUser;
+  // currentUser: LibraryUser;
   title = '..::Library Management::..';
 
-  constructor(private router: Router, private authenticationService: AuthenticationService){
-    this.authenticationService.currentUser.subscribe(
-      us => this.currentUser = us);
-  }
-
-  logout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/login']);
-  }
+  // constructor(private router: Router, private authenticationService: AuthenticationService){
+  //   this.authenticationService.currentUser.subscribe(
+  //     us => this.currentUser = us);
+  // }
+  //
+  // logout() {
+  //   this.authenticationService.logout();
+  //   this.router.navigate(['/login']);
+  // }
 }

@@ -4,8 +4,8 @@ import {UserComponent} from './user/user.component';
 import {UserEditComponent} from './user-edit/user-edit.component';
 import {BookComponent} from './book/book.component';
 import {HomeComponent} from './login/home';
-import {AuthGuard} from './login/guard';
 import {LogComponent} from './login/log';
+import {AuthGuard} from './login/guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/users', pathMatch: 'full'},
@@ -20,7 +20,7 @@ const routes: Routes = [
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
-
+export const routing = RouterModule.forRoot((routes));
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
