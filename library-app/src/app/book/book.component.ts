@@ -5,14 +5,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-book',
-  templateUrl: './book.component.html'})
+  templateUrl: './book.component.html'
+})
 export class BookComponent implements OnInit {
   books: Book[];
   findForm: FormGroup;
 
   constructor(private bookService: BookService) {
-    this.getBooksByAuthor();
-    this.getBooksByTitle();
+    // this.getBooksByAuthor();
+    // this.getBooksByTitle();
   }
 
   ngOnInit(): void {

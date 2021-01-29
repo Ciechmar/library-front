@@ -5,5 +5,5 @@ export class Book {
   publisher: string;
   publicationYear: string;
   placeOfPublication: string;
-  isbn: string;
+  isbnIssn: string;
 }

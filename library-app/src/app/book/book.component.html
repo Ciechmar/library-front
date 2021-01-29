@@ -1,6 +1,3 @@
-<section>
-  Działam!
-</section>
 <!--<section>-->
 <!--  <table>-->
 <!--    <thead>-->
@@ -20,30 +17,47 @@
 <!--    </thead>-->
 <!--  </table>-->
 <!--</section>-->
+<section>
+  <form class="form" [formGroup]="findForm">
+    <label> Znajdź książkę po autorze:
+      <input type="text" placeholder="tolkien" formControlName="author"/>
+    </label>
+    <span *ngIf="!findForm.get('author').valid && findForm.get('author').touched">Please enter valid
+            author</span>
+    <button type="submit"
+            (click)="getBooksByAuthor()"
+            class="button-green">Szukaj
+    </button>
+  </form>
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Autor</th>
+        <th> Tytuł</th>
+        <th> Wydawca</th>
+        <th> Rok publikacji</th>
+        <th>Miejsce publikacji</th>
+        <th>ISBN</th>
+        <th>Akcje</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.publisher}}</td>
+        <td>{{book.publicationYear}}</td>
+        <td>{{book.placeOfPublication}}</td>
+        <td>{{book.isbnIssn}}</td>
+        <td> <button type="submit" class="button-green">Nie działam</button></td>
+      </tr>
+      </tbody>
+    </table>
 
-<!--<section>-->
-<!--  <table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th>#</th>-->
-<!--      <th>Autor</th>-->
-<!--      <th> Tytuł</th>-->
-<!--      <th> Wydawca</th>-->
-<!--      <th> Rok publikacji</th>-->
-<!--      <th>Miejsce publikacji</th>-->
-<!--      <th>ISBN</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr *ngFor="let book of books">-->
-<!--      <td>{{book.id}}</td>-->
-<!--      <td>{{book.author}}</td>-->
-<!--      <td>{{book.title}}</td>-->
-<!--      <td>{{book.publisher}}</td>-->
-<!--      <td>{{book.publicationYear}}</td>-->
-<!--      <td>{{book.placeOfPublication}}</td>-->
-<!--      <td>{{book.isbn}}</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-<!--</section>-->
+  </div>
+  <hr/>
+</section>
+
