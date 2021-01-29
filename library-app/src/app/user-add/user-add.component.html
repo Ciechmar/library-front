@@ -1,0 +1,44 @@
+<H2>Wprowadź nowego użytkownika:</H2>
+<section>
+
+  <form class="form" [formGroup]="signUpForm">
+    <label> Imię:
+      <input type="text" placeholder="np.:Kasia" formControlName="firstName"/>
+      <span *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched">Please enter valid
+            first name</span></label>
+    <label> Nazwisko:
+      <input type="text" placeholder="np.:Nowak" formControlName="lastName"/>
+      <span *ngIf="!signUpForm.get('lastName').valid && signUpForm.get('lastName').touched">Please enter valid
+            last name</span></label>
+    <label> Rok urodzenia:
+      <input type="text" placeholder="np.:1999" formControlName="year"/>
+      <span *ngIf="!signUpForm.get('year').valid && signUpForm.get('year').touched">Please enter valid
+            year of born</span></label>
+    <label> Email:
+      <input type="text" placeholder="np.:email@email.pl" formControlName="email"/>
+      <span *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched">Please enter valid
+            email</span></label>
+    <label> Hasło:
+      <input type="password" formControlName="password"/></label>
+    <span *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched">Please enter valid
+            email</span>
+    <label> Numer telefonu:
+
+      <input type="text" formControlName="tel"/>
+    </label>
+    <span *ngIf="!signUpForm.get('tel').valid && signUpForm.get('tel').touched">Please enter valid
+            tel</span>
+    <button type="submit"
+            (click)="addUser(
+            signUpForm.get('firstName').value,
+            signUpForm.get('lastName').value,
+            signUpForm.get('year').value,
+            signUpForm.get('password').value,
+            signUpForm.get('email').value,
+            signUpForm.get('tel').value
+            )"
+            class="button-green">Zapisz
+    </button>
+
+  </form>
+</section>
