@@ -5,10 +5,12 @@ import {UserEditComponent} from './user-edit/user-edit.component';
 import {BookComponent} from './book/book.component';
 import {NavComponent} from './nav/nav.component';
 import {LogComponent} from './log/log.component';
+import {UserAddComponent} from './user-add/user-add.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: '/users', pathMatch: 'full'},
   {path: 'user', component: UserComponent},
+  {path: 'add_user', component: UserAddComponent},
   {path: 'book', component: BookComponent},
   {path: 'nav', component: NavComponent},
   {path: 'log', component: LogComponent},

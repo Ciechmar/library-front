@@ -12,8 +12,6 @@ export class BookComponent implements OnInit {
   findForm: FormGroup;
 
   constructor(private bookService: BookService) {
-    // this.getBooksByAuthor();
-    // this.getBooksByTitle();
   }
 
   ngOnInit(): void {

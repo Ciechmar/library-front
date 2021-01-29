@@ -1,31 +1,24 @@
-<!--<section>-->
-<!--  <table>-->
-<!--    <thead>-->
-<!--    <tr> Wyszukaj po:</tr>-->
-<!--    <td> Autorze:</td>-->
-<!--    <td><input type="text" (click)="getBooksByAuthor()"/></td>-->
-<!--    <td>-->
-<!--      <button (click)="getBooksByAuthor()"> Szukaj</button>-->
-<!--    </td>-->
-<!--    <tr>-->
-<!--    <td> Tytule:</td>-->
-<!--    <td><input type="text" formControlName="author"/></td>-->
-<!--    <td>-->
-<!--      <button class="submit" (click)="getBooksByTitle()"> Szukaj</button>-->
-<!--    </td>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--  </table>-->
-<!--</section>-->
 <section>
   <form class="form" [formGroup]="findForm">
     <label> Znajdź książkę po autorze:
-      <input type="text" placeholder="tolkien" formControlName="author"/>
+      <input type="text" placeholder="np.: Tolkien" formControlName="author"/>
     </label>
     <span *ngIf="!findForm.get('author').valid && findForm.get('author').touched">Please enter valid
             author</span>
     <button type="submit"
             (click)="getBooksByAuthor()"
+            class="button-green">Szukaj
+    </button>
+  </form>
+
+  <form class="form" [formGroup]="findForm">
+    <label> Znajdź książkę po tytule:
+      <input type="text" placeholder="np.: Hobbit" formControlName="title"/>
+    </label>
+    <span *ngIf="!findForm.get('title').valid && findForm.get('title').touched">Please enter valid
+            author</span>
+    <button type="submit"
+            (click)="getBooksByTitle()"
             class="button-green">Szukaj
     </button>
   </form>

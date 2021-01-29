@@ -16,7 +16,7 @@ export class UserEditComponent implements OnInit {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
   user: LibraryUser;
-  signUpForm: FormGroup;
+
   findForm: FormGroup;
 
   constructor(private route: ActivatedRoute, private userService: UserService, private location: Location, private http: HttpClient) {
@@ -26,22 +26,9 @@ export class UserEditComponent implements OnInit {
 
     this.findForm = new FormGroup(
       {'id': new FormControl('', Validators.required)});
-    this.signUpForm = new FormGroup(
-      {
-        'firstName': new FormControl('', Validators.required),
-        'lastName': new FormControl('', Validators.required),
-        'year': new FormControl('', [Validators.min(1910), Validators.max(2021)]),
-        'password': new FormControl('', Validators.required),
-        'email': new FormControl('', Validators.email),
-        'tel': new FormControl('500000000', Validators.required)
-      }
-    );
   }
 
-  addUser(firstName: string, lastName: string, year: number, password: string, email: string, tel: number): void {
-    this.userService.addUser({firstName, lastName, year, password, email, tel} as LibraryUser)
-      .subscribe(() => this.goBack());
-  }
+
 
 
   getUser(id: number): void {

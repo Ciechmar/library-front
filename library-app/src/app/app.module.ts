@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NavComponent} from './nav/nav.component';
 import { TopComponent } from './top/top.component';
 import { BottomComponent } from './bottom/bottom.component';
+import { UserAddComponent } from './user-add/user-add.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BottomComponent } from './bottom/bottom.component';
     LogComponent,
     NavComponent,
     TopComponent,
-    BottomComponent
+    BottomComponent,
+    UserAddComponent
   ],
   imports: [
     BrowserModule,
