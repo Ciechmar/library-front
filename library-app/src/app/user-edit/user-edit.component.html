@@ -1,5 +1,5 @@
 <H2>Wprowadź nowego użytkownika:</H2>
-<section class="container">
+<section>
 
   <form class="form" [formGroup]="signUpForm">
     <label> Imię:
@@ -24,7 +24,7 @@
             email</span>
     <label> Numer telefonu:
 
-      <input type="text" placeholder="500000000" formControlName="tel"/>
+      <input type="text" formControlName="tel"/>
     </label>
     <span *ngIf="!signUpForm.get('tel').valid && signUpForm.get('tel').touched">Please enter valid
             tel</span>
@@ -76,6 +76,10 @@
             <td>{{user.year}}</td>
             <td>{{user.tel}}</td>
             <td><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+      <td>
+      <a routerLink="/edit/{{user.id}}" class="button button-green">Edytuj</a>
+      <button class="button button-red" (click)="delete(user)">Usuń</button>
+    </td>
     </tr>
     </tbody>
   </table>

@@ -1,27 +1,25 @@
 import {Component, OnInit} from '@angular/core';
-import {Book} from "../model/book";
-import {BookService} from "../book.service";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Book} from '../model/book';
+import {BookService} from '../book.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
-})
+  templateUrl: './book.component.html'})
 export class BookComponent implements OnInit {
   books: Book[];
   findForm: FormGroup;
 
   constructor(private bookService: BookService) {
-    this.getBooksByAuthor(),
-      this.getBooksByTitle()
+    this.getBooksByAuthor();
+    this.getBooksByTitle();
   }
 
   ngOnInit(): void {
     this.findForm = new FormGroup({
       'title': new FormControl('', Validators.required),
       'author': new FormControl('', Validators.required)
-    })
+    });
 
   }
 
