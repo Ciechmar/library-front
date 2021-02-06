@@ -41,6 +41,15 @@ export class UserService {
     const url = `http://localhost:8080/users/${id}`;
     return this.http.get<LibraryUser>(url);
   }
+  getUserByEmail(email: string): Observable<LibraryUser> {
+    const url = `http://localhost:8080/users/email/${email}`;
+    return this.http.get<LibraryUser>(url);
+  }
+
+  getUserByTel(tel: number): Observable<LibraryUser> {
+    const url = `http://localhost:8080/users/tel/${tel}`;
+    return this.http.get<LibraryUser>(url);
+  }
 
   updateUser(user: LibraryUser): Observable<LibraryUser> {
     const url = `${this.userUrl}/${user.id}`;

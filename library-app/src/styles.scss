@@ -45,14 +45,11 @@ body {
 
 .app-nav {
   float: left;
-  width: 25%;
-  height: 100%;
-
+  background-color: $color-text;
 }
 
 .router-outlet {
   float: right;
-  width: 75%;
 
 }
 
@@ -62,14 +59,14 @@ body {
 
 .container {
   margin: 0 auto;
-  padding: 0 20px;
+
   width: 80vw;
 }
 
 nav {
   background-color: $color-text;
-  //position: fixed;
-  line-height: 2;
+  padding: 20px;
+  line-height: 2.5;
 
   &_link {
     color: $color-splash;
@@ -88,9 +85,6 @@ a, a:hover {
   color: $color-splash;
 }
 
-section {
-  padding: 20px 0;
-}
 
 .splash {
   position: relative;
@@ -106,6 +100,7 @@ section {
 .page-intro {
   margin: auto;
   text-align: center;
+  padding: 20px;
 }
 
 .main-title {
@@ -166,18 +161,6 @@ table tbody > tr:nth-child(odd) {
   cursor: pointer;
 }
 
-///* Przycisk po najechaniu kursorem  - szary do przycisku podstawowego np.: szukaj */
-//.button:hover {
-//  background: #888888;
-//}
-//
-///* Przycisk w stanie aktywnym */
-//.button:active,
-//.button:focus {
-//  background: #777777;
-//}
-
-/* Przycisk w kolorze zielonym */
 .button-green {
   background: $color-main;
 }
@@ -191,7 +174,6 @@ table tbody > tr:nth-child(odd) {
   background: $color-main-focus;
 }
 
-/* Przycisk w kolorze czerwonym */
 .button-red {
   background: $color-del;
 }
@@ -220,15 +202,15 @@ table tbody > tr:nth-child(odd) {
   margin: 0;
   font-family: $font-header;
   text-align: center;
-  color: $color-text;
+  color: $color-splash;
   font-size: 24px;
   text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .quotes {
   background-color: lighten($color-splash, 10%);
-  padding: 30px 0 60px 0;
+  padding: 30px;
 }
 
 .quotes-wrapper {

@@ -12,6 +12,36 @@
             class="button-green">Szukaj
     </button>
   </form>
+
+  <form class="form" [formGroup]="findForm">
+    <label> Znajdź użytkownika po email'u:
+      <input type="email" placeholder="email@email.pl" formControlName="email"/>
+    </label>
+    <span *ngIf="!findForm.get('email').valid && findForm.get('email').touched">Please enter valid
+            email</span>
+    <button type="submit"
+            (click)="getUserByEmail(
+            findForm.get('email').value
+            )"
+            class="button-green">Szukaj
+    </button>
+  </form>
+
+  <form class="form" [formGroup]="findForm">
+    <label> Znajdź użytkownika po numerze telefonu:
+      <input type="tel" placeholder="12345678" formControlName="tel"/>
+    </label>
+    <span *ngIf="!findForm.get('tel').valid && findForm.get('tel').touched">Please enter valid
+            tel</span>
+    <button type="submit"
+            (click)="getUserByTel(
+            findForm.get('tel').value
+            )"
+            class="button-green">Szukaj
+    </button>
+  </form>
+
+
   <div *ngIf="user">
   <table>
     <thead>
@@ -39,5 +69,4 @@
     </tbody>
   </table>
   </div>
-  <hr/>
 </section>
