@@ -6,6 +6,7 @@ $font-other: 'Charmonman', cursive;
 
 $color-background: #CCBA9D;
 $color-splash: #C8A36E;
+$color-splash-light: #f3db9e;
 $color-main: #38887c; /*guziki*/
 $color-main-hover: #285d52;
 $color-main-focus: #11453b;
@@ -44,13 +45,8 @@ body {
 }
 
 .app-nav {
-  float: left;
   background-color: $color-text;
-}
-
-.router-outlet {
-  float: right;
-
+  vertical-align: top;
 }
 
 .app-bottom {
@@ -59,23 +55,22 @@ body {
 
 .container {
   margin: 0 auto;
+  padding: 20px 0;
 
   width: 80vw;
 }
 
 nav {
-  background-color: $color-text;
-  padding: 20px;
+  background-color: $color-text ;
   line-height: 2.5;
 
   &_link {
-    color: $color-splash;
+    color: $color-top;
   }
 
   &_list {
     text-align: left;
   }
-
 
 }
 
@@ -138,14 +133,15 @@ table {
 
 table th,
 table td {
-  padding: 8px;
+  padding: 0 8px ;
   text-align: left;
 }
 
 /* Cieniujemy co drugi (parzysty) wiersz tabeli */
 /* Używamy tbody, aby upewnić się, że nie cieniujemy nagłówka - to zachowuje kolejność cieniowania */
 table tbody > tr:nth-child(odd) {
-  background: #dddddd;
+  background: $color-splash-light;
+
 }
 
 /* Przyciski */
